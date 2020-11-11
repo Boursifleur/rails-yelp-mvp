@@ -1,0 +1,17 @@
+<h1 class= "text-center">Restaurants</h1>
+<br>
+
+<div class = "container d-flex justify-content-left mt-5 mr-5 pr-5">
+
+  <% @restaurants.each do |restaurant| %>
+    <div class= "card">
+      <h3>
+        <%= link_to restaurant.name, restaurant_path(restaurant)%>
+      </h3>
+      <p><%= restaurant.address %></p>
+      <p><%= restaurant.category %></p>
+    </div>
+  <% end %>
+  <%= link_to "Add another one", new_restaurant_path  %>
+</div>
+
